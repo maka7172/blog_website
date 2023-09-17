@@ -1,7 +1,10 @@
 from django.test import TestCase
-from .models import Post
 from django.urls import reverse
 from django.contrib.auth.models import User
+
+from .models import Post
+
+
 
 class BlogPostTest(TestCase) :
 
@@ -17,4 +20,6 @@ class BlogPostTest(TestCase) :
     def do_model_in_page(self) :
         response = self.client.get(reverse('post_page'))
         self.assertContains(response,self.post.text)
+
+
     
