@@ -21,9 +21,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a class="nav-link active" aria-current="page" href="home/">Home</a>
-                <a class="nav-link" href="blog/">Blog</a>
-                <a class="nav-link" href="post/">posts</a>
+                <a class="nav-link active" aria-current="page" href="{% url 'home_page' %}">Home</a>
+                <a class="nav-link" href="{% url 'post_page' 1 %}">Blog</a>
+                <a class="nav-link" href="{% url 'post_page_new' %}">new posts</a>
             </div>
         </div>
         <div class="mx-2 text-white">Welcome</div>

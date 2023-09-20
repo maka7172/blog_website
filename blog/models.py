@@ -15,3 +15,11 @@ class Post(models.Model) :
 
     def __str__(self) -> str:
         return f'{self.title} : {self.date_creat}'  
+    
+
+class Comment(models.Model) :
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    comment = models.TextField()
+    date_create = models.DateTimeField(auto_now_add=True)
+    post_id = models.ForeignKey('Post',on_delete=models.CASCADE)
