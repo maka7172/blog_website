@@ -4,9 +4,10 @@ from . import views
 
 urlpatterns = [
     
-    path('',views.show_home,name='home_page' ),
-    path('<int:pk>/',views.show_post,name='post_page'),
-    path('new/',views.show_post_new,name='post_page_new'),
-    path('<int:pk>/update',views.show_post_update,name='post_page_update'),
+    path('',views.Postview.as_view(),name='home_page' ),
+    path('<int:pk>/',views.PostDtial.as_view(),name='post_page'),
+    path('new/',views.PostCreate.as_view(),name='post_page_new'),
+    path('<int:pk>/update',views.PostUpdate.as_view(),name='post_page_update'),
+    path('<int:pk>/delete',views.PostDelete.as_view(),name='post_page_delete')
     
 ]

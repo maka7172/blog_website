@@ -9,22 +9,26 @@
                 <p class="small text-muted mt-2">{{post.author}}</p>
                 <p class="mt-2">{{post.text}}</p>
                 <a href = "{% url 'post_page_update' post.pk %}"><button type="submit" class="btn btn-primary" >Edit</button></a>
+                <a href = "{% url 'post_page_delete' post.pk %}"><button type="submit" class="btn btn-primary" >delete</button></a>
             </div>
         
             <div class="card shadow my-3 p-5">
                 <h3>Comments:</h3>
-                {% if comments != ''  %}
-                    {% for coment in comments  %}
-                    <div class="card shadow my-3 p-5">
-                        <h1>{{coment.name}}</h1>
-                        <p class="small text-muted mt-2">{{coment.email}}</p>
-                        <p class="mt-2">{{coment.comment}}</p>
-                    </div>
-                
-                    {% endfor %}
+                {% if comments == 0  %}
+                    
+                    <h1> No comments yet! Be the first one.</h1>
                 
                 {% else %}
-                    <h1> No comments yet! Be the first one.</h1>
+
+                {% for coment in comments  %}
+                <div class="card shadow my-3 p-5">
+                    <h1>{{coment.name}}</h1>
+                    <p class="small text-muted mt-2">{{coment.email}}</p>
+                    <p class="mt-2">{{coment.comment}}</p>
+                </div>
+            
+                {% endfor %}
+
                 {% endif %}
                     
             </div>

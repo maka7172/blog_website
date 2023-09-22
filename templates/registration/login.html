@@ -43,14 +43,13 @@
         <div class="col-9">
             <div class="card shadow-sm my-3">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-muted small py-2">2 Sep 2021</h6>
-                    <p class="card-text py-3">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                    </p>
-                    <div class="btn btn-sm btn-success">Read More</div>
+                <form action="" method="post">
+                    {% csrf_token %}
+                    {{form.as_p}}
+                    <input type="submit" value="login!" class="btn btn-success">
+
+                </form>
+                   
                 </div>
             </div>
         </div>

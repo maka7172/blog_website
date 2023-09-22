@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Post(models.Model) :
     STATUS_CHOISES = (
@@ -15,6 +16,9 @@ class Post(models.Model) :
 
     def __str__(self) -> str:
         return f'{self.title} : {self.date_creat}'  
+    
+    def get_absolute_url (self) :
+        return reverse('post_page' , args = [self.pk]) 
     
 
 class Comment(models.Model) :
